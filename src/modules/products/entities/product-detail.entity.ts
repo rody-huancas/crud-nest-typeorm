@@ -15,6 +15,6 @@ export class ProductDetail {
   @Column({ type: 'decimal' })
   det_price_sale: number;
 
-  @ManyToOne(() => Product, (product) => product.details)
+  @ManyToOne(() => Product, (product) => product.details, { onDelete: 'CASCADE' })
   product: Product;
 }

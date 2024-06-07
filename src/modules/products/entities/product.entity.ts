@@ -25,9 +25,9 @@ export class Product {
   @Column({ type: 'bool' })
   prod_active: boolean;
 
-  @OneToMany(() => ProductDetail, (productDetail) => productDetail.product)
+  @OneToMany(() => ProductDetail, (productDetail) => productDetail.product, { cascade: true })
   details: ProductDetail[];
 
-  @OneToMany(() => ProductCharacteristics, (productCharacteristics) => productCharacteristics.product)
+  @OneToMany(() => ProductCharacteristics, (productCharacteristics) => productCharacteristics.product, { cascade: true })
   characteristics: ProductCharacteristics[];
 }

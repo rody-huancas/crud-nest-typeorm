@@ -17,7 +17,7 @@ export class ProductCharacteristics {
 
   @Column({ type: 'bool' })
   char_availability: boolean;
-
-  @ManyToOne(() => Product, (product) => product.characteristics)
+  
+  @ManyToOne(() => Product, (product) => product.characteristics, { onDelete: 'CASCADE' })
   product: Product;
 }
