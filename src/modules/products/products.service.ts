@@ -68,6 +68,9 @@ export class ProductsService {
       relations: {
         details: true,
         characteristics: true
+      },
+      order: {
+        prod_created: "DESC"
       }
     })
   }
@@ -143,7 +146,6 @@ export class ProductsService {
       await queryRunner.release();
     }
   }
-
 
   async remove(id: string) {
     const product = await this.findOne(id);
